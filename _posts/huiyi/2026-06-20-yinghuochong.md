@@ -2,7 +2,7 @@
 layout: post
 title: 萤火虫
 date: 2026-06-20
-categories: [回忆、随感]
+categories: [回忆,随感]
 excerpt: 热闹的夏夜又在上演，沉默的萤虫已谢幕离去
 ---
 
