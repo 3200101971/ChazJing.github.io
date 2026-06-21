@@ -16,7 +16,7 @@ title: 关于我
             <div class="contact-info">
                 <h2>联系方式</h2>
                 <ul>
-                    <li><strong>邮箱：</strong><a href="mailto:3200101971@zju.edu.cn">3200101971@zju.edu.cn</a></li>
+                    <li><strong>邮箱：</strong><a href="mailto:chazjing2020@163.com">chazjing2020@163.com</a></li>
                     <li><strong>GitHub：</strong><a href="https://github.com/{{ site.github_username }}" target="_blank">@{{ site.github_username }}</a></li>
                     <li><strong>微信公众号：</strong><a href="#">ChazJing</a></li>
                     <li><strong>个人域名：</strong><a href="https://chazjing.icu/" target="_blank">https://chazjing.icu/</a></li>
