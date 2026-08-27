@@ -1,0 +1,94 @@
+---
+layout: default
+title: 首页
+---
+
+<div class="home-container">
+    <section class="intro-section">
+        <div class="profile-card">
+            <div class="profile-photo">
+                <img src="{{ "/assets/images/photo.jpg" | relative_url }}" alt="我的照片">
+            </div>
+            
+            <div class="profile-info">
+                <h1>欢迎来到我的小窝</h1>
+                <p class="bio">一个编程小白正在依靠AI搭建网站｜<a href="https://chazjing.icu/" target="_blank">https://chazjing.icu/</a></p>
+                
+                <div class="contact-links">
+                    <h3>联系方式</h3>
+                    <ul>
+                        <li>📧 邮箱：<a href="mailto:chazjing2020@163.com">chazjing2020@163.com</a></li>
+                        <li>💻 GitHub：<a href="https://github.com/{{ site.github_username }}">@{{ site.github_username }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="categories-section">
+        <h2>网站栏目</h2>
+        <div class="categories-grid">
+            <a href="{{ "/jingyan" | relative_url }}" class="category-card">
+                <h3>经验帖</h3>
+                <span class="post-count">{% if site.categories["经验帖"] %}{{ site.categories["经验帖"].size }}{% else %}0{% endif %} 篇帖子</span>
+            </a>
+            <a href="{{ "/shenghuo" | relative_url }}" class="category-card">
+                <h3>生活记录</h3>
+                <span class="post-count">{% if site.categories["生活记录"] %}{{ site.categories["生活记录"].size }}{% else %}0{% endif %} 篇帖子</span>
+            </a>
+            <a href="{{ "/huiyi" | relative_url }}" class="category-card">
+                <h3>回忆</h3>
+                <span class="post-count">{% if site.categories["回忆"] %}{{ site.categories["回忆"].size }}{% else %}0{% endif %} 篇帖子</span>
+            </a>
+            <a href="{{ "/suigan" | relative_url }}" class="category-card">
+                <h3>随感</h3>
+                <span class="post-count">{% if site.categories["随感"] %}{{ site.categories["随感"].size }}{% else %}0{% endif %} 篇帖子</span>
+            </a>
+            <a href="{{ "/xiaoyixiao" | relative_url }}" class="category-card">
+                <h3>笑一笑</h3>
+                <span class="post-count">{% if site.categories["笑一笑"] %}{{ site.categories["笑一笑"].size }}{% else %}0{% endif %} 篇帖子</span>
+            </a>
+        </div>
+    </section>
+    
+    <section class="recent-posts">
+        <h2>最新帖子</h2>
+        <div class="posts-grid">
+            {% for post in site.posts limit:6 %}
+            <article class="post-card">
+                <h3 class="post-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                <div class="post-meta">
+                    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                    {% if post.categories %}
+                    <span class="post-categories">
+                        {% for category in post.categories %}
+                        {% case category %}
+                        {% when "经验帖" %}
+                        <a href="{{ site.baseurl }}/jingyan">{{ category }}</a>
+                        {% when "生活记录" %}
+                        <a href="{{ site.baseurl }}/shenghuo">{{ category }}</a>
+                        {% when "回忆" %}
+                        <a href="{{ site.baseurl }}/huiyi">{{ category }}</a>
+                        {% when "随感" %}
+                        <a href="{{ site.baseurl }}/suigan">{{ category }}</a>
+                        {% when "笑一笑" %}
+                        <a href="{{ site.baseurl }}/xiaoyixiao">{{ category }}</a>
+                        {% else %}
+                        {{ category }}
+                        {% endcase %}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </div>
+                <p class="post-excerpt"><a href="{{ post.url | relative_url }}">{{ post.excerpt }}</a></p>
+            </article>
+            {% endfor %}
+        </div>
+        
+        <div class="view-all">
+            <a href="{{ "/posts" | relative_url }}" class="btn">查看所有帖子 →</a>
+        </div>
+    </section>
+</div>

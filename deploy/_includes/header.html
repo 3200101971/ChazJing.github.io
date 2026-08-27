@@ -1,0 +1,23 @@
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="{{ "/" | relative_url }}" class="site-title">ChazJing</a>
+        
+        <!-- 汉堡菜单按钮（移动端显示） -->
+        <button class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-menu" id="nav-menu">
+            <li><button id="dark-mode-toggle" class="dark-mode-btn">黑夜模式：关</button></li>
+            <li><a href="{{ "/" | relative_url }}">首页</a></li>
+            <li><a href="{{ "/about" | relative_url }}">关于我</a></li>
+            <li><a href="{{ "/jingyan" | relative_url }}">经验帖</a></li>
+            <li><a href="{{ "/shenghuo" | relative_url }}">生活记录</a></li>
+            <li><a href="{{ "/huiyi" | relative_url }}">回忆</a></li>
+            <li><a href="{{ "/suigan" | relative_url }}">随感</a></li>
+            <li><a href="{{ "/xiaoyixiao" | relative_url }}">笑一笑</a></li>
+        </ul>
+    </div>
+</nav>

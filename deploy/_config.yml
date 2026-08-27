@@ -1,0 +1,27 @@
+title: ChazJing的个人网站
+author: ChazJing
+email: chazjing2020@163.com
+description: 这是一个个人记录网站
+baseurl: ""
+url: "https://chazjing.icu"
+github_username: "ChazJing"
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  posts:
+    output: true
+    permalink: /posts/:slug/
+
+defaults:
+  - scope:
+      path: "_posts/**/*"
+    values:
+      layout: post
+  - scope:
+      path: "_drafts"
+    values:
+      layout: post

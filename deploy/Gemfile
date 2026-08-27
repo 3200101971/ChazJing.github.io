@@ -1,0 +1,11 @@
+source "https://rubygems.org"
+
+# 轻量纯 Ruby 依赖，构建快、无 native 编译
+gem "jekyll"
+gem "jekyll-feed"
+gem "kramdown"
+gem "minima"
+
+# Windows 平台兼容（用户本地构建时用得到）
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw]
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :mswin, :x64_mingw]

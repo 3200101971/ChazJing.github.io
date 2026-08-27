@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+    {% include header.html %}
+    
+    <button class="mobile-toc-toggle" id="mobile-toc-toggle" aria-label="目录">
+        ☰
+    </button>
+    
+    <div class="mobile-toc-overlay" id="mobile-toc-overlay"></div>
+    <aside class="mobile-toc-sidebar" id="mobile-toc-sidebar">
+        <div class="mobile-toc-wrapper">
+            <h3 class="toc-title">目录</h3>
+            <div id="mobile-toc"></div>
+        </div>
+    </aside>
+    
+    <main class="main-content post-layout">
+        <article class="post-content">
+            <header class="post-header">
+                <h1 class="post-title">{{ page.title }}</h1>
+                <div class="post-meta">
+                    <span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span>
+                    {% if page.categories %}
+                    <span class="post-categories">
+                        {% for category in page.categories %}
+                        {% case category %}
+                        {% when "经验帖" %}
+                        <a href="{{ site.baseurl }}/jingyan">{{ category }}</a>
+                        {% when "生活记录" %}
+                        <a href="{{ site.baseurl }}/shenghuo">{{ category }}</a>
+                        {% when "回忆" %}
+                        <a href="{{ site.baseurl }}/huiyi">{{ category }}</a>
+                        {% when "随感" %}
+                        <a href="{{ site.baseurl }}/suigan">{{ category }}</a>
+                        {% when "笑一笑" %}
+                        <a href="{{ site.baseurl }}/xiaoyixiao">{{ category }}</a>
+                        {% else %}
+                        {{ category }}
+                        {% endcase %}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </div>
+            </header>
+            
+            <div class="post-body">
+                {{ content }}
+            </div>
+            
+
+        </article>
+        
+        <aside class="post-sidebar">
+            <div class="toc-container">
+                <button class="toc-toggle" id="toc-toggle" aria-label="目录">
+                    ☰
+                </button>
+                <div class="toc-wrapper" id="toc-wrapper">
+                    <h3 class="toc-title">目录</h3>
+                    <div id="toc"></div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    
+    {% include footer.html %}
+    
+    <script src="{{ "/assets/js/dark-mode.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/toc.js" | relative_url }}"></script>
+</body>
+</html>
